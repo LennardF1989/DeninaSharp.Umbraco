@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E56EBB8-D3B7-445A-A7CC-2992C3B9C455}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeninaSharp.Umbraco</RootNamespace>
+    <AssemblyName>DeninaSharp.Umbraco</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\ErrorBehaviors.cs" />
+    <Compile Include="Exceptions\DeninaUmbracoException.cs" />
+    <Compile Include="Models\Command.cs" />
+    <Compile Include="Models\DeninaSharpModel.cs" />
+    <Compile Include="Models\DocumentedCommand.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib\DeninaSharp\Library\DeninaSharp.csproj">
+      <Project>{2D145F1D-C223-414C-99CC-DA556C54384F}</Project>
+      <Name>DeninaSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\js\deninasharp.gridcontroller.js" />
+    <Content Include="wwwroot\scss\deninasharp.css">
+      <DependentUpon>deninasharp.scss</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\scss\deninasharp.min.css">
+      <DependentUpon>deninasharp.css</DependentUpon>
+    </Content>
+    <Content Include="wwwroot\views\deninasharp.grid.html" />
+    <Content Include="wwwroot\views\deninasharp.u8.html" />
+    <Content Include="wwwroot\views\deninasharp.overlay.u8.html" />
+    <Content Include="wwwroot\views\deninasharp.u7.html" />
+    <Content Include="wwwroot\views\deninasharp.overlay.u7.html" />
+    <Content Include="gulpfile.js" />
+    <Content Include="wwwroot\package.manifest" />
+    <None Include="wwwroot\scss\deninasharp.scss" />
+    <Content Include="wwwroot\js\deninasharp.controller.u8.js" />
+    <Content Include="wwwroot\js\deninasharp.controller.u7.js" />
+    <Content Include="wwwroot\js\deninasharp.controller.js" />
+    <None Include="package.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

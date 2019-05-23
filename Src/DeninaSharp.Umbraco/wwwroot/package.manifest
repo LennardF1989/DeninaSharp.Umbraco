@@ -1,0 +1,29 @@
+﻿{
+  "propertyEditors": [
+    {
+      "name": "DeninaSharp",
+      "alias": "DeninaSharp",
+      "icon": "icon-code",
+      "editor": {
+        "view": "~/App_Plugins/DeninaSharp/views/deninasharp.html",
+        "hideLabel": false,
+        "valueType": "JSON"
+      }
+    }
+  ],
+  "gridEditors": [
+    {
+      "name": "DeninaSharp",
+      "alias": "deninasharp",
+      "view": "~/App_Plugins/DeninaSharp/views/deninasharp.grid.html",
+      "icon": "icon-code",
+      "render": "DeninaSharp"
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/DeninaSharp/js/deninasharp.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/DeninaSharp/css/deninasharp.css"
+  ]
+}

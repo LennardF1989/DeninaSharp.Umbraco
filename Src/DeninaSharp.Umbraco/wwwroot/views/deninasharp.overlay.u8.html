@@ -1,0 +1,34 @@
+﻿<div ng-controller="DeninaSharpOverlayController">
+    <umb-property property="commandProperty">
+        <div>
+            <select
+                ng-model="model.command"
+                ng-options="command.name for command in model.commands track by command.name"
+                ng-required="true"
+                style="width: 100%;">
+            </select>
+        </div>
+
+        <div ng-show="model.command" style="margin-top: 10px;">
+            {{model.command.description}}
+        </div>
+    </umb-property>
+    
+    <div ng-show="model.command">
+        <umb-property property="commentProperty">
+            <textarea ng-model="model.comment" style="width: 100%;"></textarea>
+        </umb-property>
+        
+        <umb-property property="inputProperty">
+            <input type="text" ng-model="model.input" style="width: 100%;" />
+        </umb-property>
+        
+        <umb-property property="outputProperty">
+            <input type="text" ng-model="model.output" style="width: 100%;" />
+        </umb-property>
+
+        <umb-property property="argument" ng-repeat="argument in model.command.arguments">
+            <input type="text" name="argument" ng-model="argument.value" ng-required="argument.required" style="width: 100%;"/>
+        </umb-property>
+    </div>
+</div>

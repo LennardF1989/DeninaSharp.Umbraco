@@ -1,0 +1,13 @@
+﻿@using DeninaSharp.Umbraco.Models
+@using Newtonsoft.Json
+@model dynamic
+@{
+    DeninaSharpModel model = null;
+
+    if (Model.value != null)
+    {
+        model = JsonConvert.DeserializeObject<DeninaSharpModel>(Model.value.ToString());
+    }
+}
+
+@Html.Partial("~/Views/Partials/_DeninaSharp.cshtml", model)

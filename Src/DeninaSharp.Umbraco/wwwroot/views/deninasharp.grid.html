@@ -1,0 +1,14 @@
+﻿<div ng-controller="DeninaSharpGridController">
+    <div class="row">
+        <div class="umb-editor-placeholder" ng-click="modify()">
+            <i class="icon icon-code"></i>
+            <div class="help-text">Click to modify DeninaSharp</div>
+        </div>
+        
+        <umb-overlay ng-if="dialog.show"
+                     model="dialog"
+                     view="dialog.view"
+                     position="right">
+        </umb-overlay>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+﻿@using DeninaSharp.Umbraco.Models
+@inherits UmbracoTemplatePage
+@{
+    Layout = "Main.cshtml";
+
+    var deninaSharpModel = Model.Content.GetPropertyValue<DeninaSharpModel>("deninaSharpBody");
+}
+
+@Html.Partial("~/Views/Partials/_DeninaSharp.cshtml", deninaSharpModel)
+
+<hr />
+
+@Html.GetGridHtml(Model.Content.GetProperty("gridBody"))

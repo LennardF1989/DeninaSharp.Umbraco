@@ -1,0 +1,21 @@
+#Generic
+/packages
+App_Data
+bin
+obj
+.vs
+*.user
+
+#Project specific
+/Src/DeninaSharp.Umbraco/node_modules
+/Src/DeninaSharp.Umbraco[7|8].Web/App_Data
+/Src/DeninaSharp.Umbraco[7|8].Web/App_Plugins/DeninaSharp
+
+#Umbraco
+!/Src/DeninaSharp.Umbraco[7|8].Web/bin
+/Src/DeninaSharp.Umbraco[7|8].Web/bin/*
+!/Src/DeninaSharp.Umbraco[7|8].Web/bin/Umbraco.Web.PublishedContentModels.dll
+/Src/DeninaSharp.Umbraco[7|8].Web/Umbraco/*
+/Src/DeninaSharp.Umbraco[7|8].Web/Umbraco_Client
+/Src/DeninaSharp.Umbraco7.Web/App_Plugins/DeninaSharp/views/deninasharp.u7.html
+/Src/DeninaSharp.Umbraco7.Web/App_Plugins/DeninaSharp/views/deninasharp.overlay.u7.html

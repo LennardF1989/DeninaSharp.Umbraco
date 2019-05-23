@@ -1,0 +1,149 @@
+﻿.deninasharp {
+    .ui-sortable-placeholder {
+        display: none;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        background-color: #03bfb3;
+        height: 2px;
+        z-index: 1;
+        margin-top: -6px;
+
+        &:after, &:before {
+            position: absolute;
+            top: -9px;
+            font-family: icomoon;
+            font-size: 18px;
+            color: #03bfb3;
+        }
+
+        &:before {
+            left: -4px;
+            content: "\e0e9";
+        }
+
+        &:after {
+            right: -4px;
+            content: "\e0d7";
+        }
+    }
+
+    .ui-sortable-hovered .ui-sortable-placeholder {
+        display: block;
+    }
+
+    .ui-sortable-draggeditem {
+        display: block !important;
+        opacity: 0.5;
+    }
+
+    .ui-sortable-helper {
+        height: auto !important;
+        width: auto !important;
+        background: #03bfb3;
+        border: 0;
+        color: #ffffff;
+        padding: 5px 10px;
+    }
+
+    .ui-sortable-dragging .sortable-command:hover {
+        border: 1px solid transparent;
+    }
+
+    .buttons {
+        text-align: right;
+        max-width: 66.6%;
+    }
+
+    .preview {
+        max-width: 66.6%;
+        max-height: 256px;
+        overflow: auto;
+        margin-top: 10px;
+    }
+
+    .sortable-commands {
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid #d8d7d9;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        user-select: none;
+        max-width: 66.6%;
+    }
+
+    .sortable-command {
+        border: 1px solid transparent;
+        background-color: #f3f3f5;
+        padding: 5px 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: move;
+
+        &:hover {
+            border: 1px solid #03bfb3;
+        }
+
+        &:hover .tools, .tools.visible {
+            visibility: visible;
+        }
+
+        > div {
+            display: flex;
+        }
+
+        .comment {
+            color: #a2a1a6;
+            word-break: break-all;
+            margin-top: 3px;
+            display: table-row;
+
+            .hashtag {
+                display: table-cell;
+                padding-right: 3px;
+            }
+
+            .text {
+                display: table-cell;
+            }
+        }
+
+        .command {
+            color: #a2a1a6;
+            word-break: break-all;
+            font-style: italic;
+
+            .title {
+                color: #000000;
+                font-style: normal;
+            }
+
+            .arrow {
+                font-style: normal;
+            }
+        }
+
+        .tools {
+            margin-left: auto;
+            visibility: collapse;
+            width: 125px;
+            padding-left: 5px;
+            text-align: right;
+            font-size: 18px;
+            color: #515054;
+
+            .tool {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.umb-grid .deninasharp {
+    .buttons, .preview, .sortable-commands {
+        max-width: 100% !important;
+    }
+}

@@ -1,0 +1,43 @@
+﻿@using DeninaSharp.Umbraco
+@using DeninaSharp.Umbraco.Exceptions
+@using DeninaSharp.Umbraco.Models
+@model DeninaSharpModel
+@{
+    if (Model == null)
+    {
+        return;
+    }
+
+    string renderResult;
+    bool renderResultValid = false;
+
+    try
+    {
+        renderResult = Helper.Render(Model);
+        renderResultValid = true;
+    }
+    catch (DeninaUmbracoException ex)
+    {
+        renderResult = ex.ToString();
+    }
+}
+
+@if (!renderResultValid)
+{
+    <div>
+        <h3>Oops, this is bad!</h3>
+
+        <pre>@renderResult</pre>
+    </div>
+}
+else
+{
+    if(!string.IsNullOrWhiteSpace(Model.Css))
+    {
+        <style>
+            @Model.Css
+        </style>
+    }
+
+    @Html.Raw(renderResult)
+}

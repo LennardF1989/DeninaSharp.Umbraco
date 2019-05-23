@@ -1,0 +1,3 @@
+[submodule "Lib/DeninaSharp"]
+	path = Lib/DeninaSharp
+	url = https://github.com/LennardF1989/DeninaSharp

@@ -1,0 +1,69 @@
+﻿<div ng-controller="DeninaSharpController" ng-show="loaded === true" class="deninasharp">
+    <umb-property property="commandProperty">
+        <div ng-if="commands && commands.length > 0" ui-sortable="sortableCommandOptions" ng-model="commands" class="sortable-commands">
+            <div ng-repeat="command in commands" class="sortable-command">
+                <div>
+                    <div>
+                        <div class="comment" ng-if="command.note">
+                            <div class="line" ng-repeat="line in getCommentLines(command.note) track by $index">
+                                <span class="hashtag">#</span>
+                                <span class="text">{{line}}</span>
+                            </div>
+                        </div>
+                        <div class="command">
+                            <span ng-if="command.input">${{command.input}} <span class="arrow">&#10140;</span></span>
+                            <span class="title">{{command.name}}</span>
+                            <span>{{generateArguments(command)}}</span>
+                            <span ng-if="command.output"><span class="arrow">&#10140;</span> ${{command.output}}</span>
+                        </div>
+                    </div>
+
+                    <div class="tools" ng-class="{visible: activeCommand == command}">
+                        <div class="tool" ng-if="copyPasteCommand" ng-click="pasteCommand($event, command)">
+                            <i class="icon icon-paste-in"></i>
+                        </div>
+                        <div class="tool" ng-click="copyCommand(command)">
+                            <i class="icon icon-documents"></i>
+                        </div>
+                        <div class="tool" ng-click="updateCommand(command)">
+                            <i class="icon icon-settings"></i>
+                        </div>
+                        <div class="tool">
+                            <i class="icon-trash" ng-click="showDeleteCommand(command)"></i>
+                            <umb-confirm-action ng-if="activeCommand == command"
+                                                direction="left"
+                                                on-confirm="acceptDeleteCommand(command)"
+                                                on-cancel="hideDeleteCommand()">
+                            </umb-confirm-action>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a ng-click="preview()" class="btn btn-info">Preview</a>
+            <a ng-click="addCommand()" class="btn btn-primary">Add command</a>
+        </div>
+        
+        <div ng-if="previewLoading">
+            Loading preview...
+        </div>
+
+        <div class="preview"></div>
+    </umb-property>
+
+    <umb-property property="property" ng-repeat="property in properties">
+        <umb-editor model="property"></umb-editor>
+    </umb-property>
+
+    <umb-overlay ng-if="commandsOverlay.show"
+                 model="commandsOverlay"
+                 view="commandsOverlay.view"
+                 position="right">
+    </umb-overlay>
+</div>
+
+<div ng-show="loaded === false">
+    Loading...
+</div>

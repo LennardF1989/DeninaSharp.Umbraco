@@ -1,0 +1,104 @@
+﻿.deninasharp .ui-sortable-placeholder {
+  display: none;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  background-color: #03bfb3;
+  height: 2px;
+  z-index: 1;
+  margin-top: -6px; }
+  .deninasharp .ui-sortable-placeholder:after, .deninasharp .ui-sortable-placeholder:before {
+    position: absolute;
+    top: -9px;
+    font-family: icomoon;
+    font-size: 18px;
+    color: #03bfb3; }
+  .deninasharp .ui-sortable-placeholder:before {
+    left: -4px;
+    content: "\e0e9"; }
+  .deninasharp .ui-sortable-placeholder:after {
+    right: -4px;
+    content: "\e0d7"; }
+
+.deninasharp .ui-sortable-hovered .ui-sortable-placeholder {
+  display: block; }
+
+.deninasharp .ui-sortable-draggeditem {
+  display: block !important;
+  opacity: 0.5; }
+
+.deninasharp .ui-sortable-helper {
+  height: auto !important;
+  width: auto !important;
+  background: #03bfb3;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 10px; }
+
+.deninasharp .ui-sortable-dragging .sortable-command:hover {
+  border: 1px solid transparent; }
+
+.deninasharp .buttons {
+  text-align: right;
+  max-width: 66.6%; }
+
+.deninasharp .preview {
+  max-width: 66.6%;
+  max-height: 256px;
+  overflow: auto;
+  margin-top: 10px; }
+
+.deninasharp .sortable-commands {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #d8d7d9;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  user-select: none;
+  max-width: 66.6%; }
+
+.deninasharp .sortable-command {
+  border: 1px solid transparent;
+  background-color: #f3f3f5;
+  padding: 5px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: move; }
+  .deninasharp .sortable-command:hover {
+    border: 1px solid #03bfb3; }
+  .deninasharp .sortable-command:hover .tools, .deninasharp .sortable-command .tools.visible {
+    visibility: visible; }
+  .deninasharp .sortable-command > div {
+    display: flex; }
+  .deninasharp .sortable-command .comment {
+    color: #a2a1a6;
+    word-break: break-all;
+    margin-top: 3px;
+    display: table-row; }
+    .deninasharp .sortable-command .comment .hashtag {
+      display: table-cell;
+      padding-right: 3px; }
+    .deninasharp .sortable-command .comment .text {
+      display: table-cell; }
+  .deninasharp .sortable-command .command {
+    color: #a2a1a6;
+    word-break: break-all;
+    font-style: italic; }
+    .deninasharp .sortable-command .command .title {
+      color: #000000;
+      font-style: normal; }
+    .deninasharp .sortable-command .command .arrow {
+      font-style: normal; }
+    .deninasharp .sortable-command .command .tools {
+      margin-left: auto;
+      visibility: collapse;
+      width: 125px;
+      padding-left: 5px;
+      text-align: right;
+      font-size: 18px;
+      color: #515054; }
+      .deninasharp .sortable-command .command .tools .tool {
+        position: relative;
+        display: inline-block;
+        cursor: pointer; }
